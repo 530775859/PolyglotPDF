@@ -13,7 +13,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 克隆项目代码
-RUN git clone https://github.com/530775859/PolyglotPDF.git .
+# RUN git clone https://github.com/530775859/PolyglotPDF.git .
+# 复制本地项目代码到镜像中
+COPY . .
 
 # 安装Python依赖
 RUN pip install --no-cache-dir -r requirements.txt
