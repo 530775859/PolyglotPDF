@@ -3,8 +3,8 @@ services:
   polyglotpdf:
     build: .
     ports:
-      - "12226:12226"
+      - "5100:5100"
     volumes:
       - ./config.json:/app/config.json
     environment:
-      - PORT=12226
+      - PORT=5100
