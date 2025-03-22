@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# 复制本地项目代码到镜像中
-COPY . .
+# 克隆项目代码
+RUN git clone git@github.com:530775859/polyglotpdf.git .
 
 # 安装Python依赖
 RUN pip install --no-cache-dir -r requirements.txt
