@@ -12,8 +12,6 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# 克隆项目代码
-# RUN git clone https://github.com/530775859/PolyglotPDF.git .
 # 复制本地项目代码到镜像中
 COPY . .
 
@@ -22,10 +20,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 设置环境变量
 ENV PYTHONUNBUFFERED=1
-ENV PORT=5100
+ENV PORT=12226
 
 # 暴露端口
-EXPOSE 5100
+EXPOSE 12226
 
 # 启动命令
 CMD ["python", "app.py"]
